@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ส่วนที่ไม่แสดงออกไปในหน้าจอของ Browser -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document 2</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ส่วนที่แสดงออกไปในหน้าจอของ Browser -->
+
+  <div class="container">
+    <!-- 3. form -->
+    <link rel="stylesheet" href="liststudent.html">
+    <div class="header form-input">
+      ฟอร์มข้อมูลนักเรียน
+    </div>
+    <div class="flex form-input">
+      <div class="header-form">ชื่อจริง</div>
+      <input class="form" name="firstname" type="text">
+    </div>
+    <div class="flex form-input">
+      <div class="header-form">นามสกุล </div>
+      <input class="form" name="lastname" type="text">
+    </div>
+    <div class="flex form-input">
+      <div class="header-form">อายุ</div>
+      <input class="form" name="age" type="number" min="0" max="100">
+    </div>
+    <div class="flex form-input">
+        <div class="header-form">ที่อยู่ </div>
+        <input class="form" name="address" type="text">
+      </div>
+    
+    </div>
+    <div class="header-form">ระดับการศึกษา
+        
+        <select name="education_level" class="form">
+            <option name="education" value="ปฐมศึกษา">ปฐมศึกษา</option>
+            <option name="education" value="มัธยม">มัธยม</option>
+            <option name="education" value="มหาวิทยาลัย">มหาวิทยาลัย</option>
+        </select>
+        
+    <!-- เพิ่มตัวเลือกเพิ่มเติมตามต้องการ -->
+    </div>
+    <div class="form-input">
+      คำอธิบายตัวตนเพิ่มเติม
+      <div>
+        <textarea name="description"></textarea>
+      </div>
+    </div>
+    <div id = "message" class ="message">
+      hi hi
+    </div>
+    <div class="center">
+      <button onclick="submitData()" class="button">ส่งข้อมูล</button>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+<script src="datastudent.js"></script>
+</body>
+</html>

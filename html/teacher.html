@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ส่วนที่ไม่แสดงออกไปในหน้าจอของ Browser -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document 2</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ส่วนที่แสดงออกไปในหน้าจอของ Browser -->
+
+  <div class="container">
+    <!-- 3. form -->
+    <div class="header form-input">
+        รายชื่อคุณครู
+    </div>
+    <div class="flex form-input">
+      <div class="header-form">ชื่อ</div>
+      <input class="form" name="firstname" type="text">
+    </div>
+    <div class="flex form-input">วิชาที่สอน
+        
+        <select name="education-level" class="form">
+        <option naทe="education" value="n1">ไทย</option>
+        <option naทe="education" value="n2">สังคม</option>
+        <option naทe="education" value="n3">คณิต</option>
+        <option naทe="education" value="p1">ประวิติศาสตร์</option>
+        <option naทe="education" value="p2">ภูมิศาสตร์</option>
+        <option naทe="education" value="p3">อังกฤษ</option>
+        <option naทe="education" value="p4">พละ</option>
+        <option naทe="education" value="p5">ฟิสิกศ์</option>
+        <option naทe="education" value="p6">เคมี</option>
+        <option naทe="education" value="m1">ชีวะ</option>
+        <option naทe="education" value="m2">จีน</option>
+        </select>
+        
+    <!-- เพิ่มตัวเลือกเพิ่มเติมตามต้องการ -->
+    </div>
+    <div class="flex form-input">
+      <div class="header-form">สอนตั้งเเต่เวลา</div>
+      <input class="form" name="timein" type="time" min="0" max="100"> <input class="form" name="timeout" type="time" min="0" max="100">
+    </div>
+   
+    <div id = "message" class ="message">
+      hi hi
+    </div>
+    <div class="center">
+      <button onclick="submitData()" class="button">ส่งข้อมูล</button>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
