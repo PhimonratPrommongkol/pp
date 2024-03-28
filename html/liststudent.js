@@ -34,7 +34,7 @@ const loadData = async () => {
           //ดึง id ของ user ที่ต้องการลบ
           const id = event.target.dataset.id;
           try {//http://localhost:8000/users/1
-            await axios.delete(`${BASE_URL}/Estates/${id}`);
+            await axios.delete(`${BASE_URL}/students/${id}`);
             loadData() ///recursive function = เราเรียก function ซ้ำ
           }catch(error){
               console.log('error: ', error);

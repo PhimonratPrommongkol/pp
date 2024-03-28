@@ -145,7 +145,7 @@ app.delete('/students/:id', async (req, res) => {
   }
 })
 /////////////////////////////////////////////////////////////////
-const validateDatatea = (teacherData) => {
+const validateDatatea = (teacherData) => {//แก้
   let errors = []
   if (!teacherData.firstname_teacher) {
       errors.push('กรุณากรอกชื่อ')
@@ -153,18 +153,18 @@ const validateDatatea = (teacherData) => {
   if (!teacherData.lastname_teacher) {
     errors.push('กรุณากรอกนามสกุล')
   }
-  if (!teacherData.education_level) {
+  if (!teacherData.subject_select) {
     errors.push('กรุณากรอกวิชา')
   }
   if (!teacherData.timein) {
-      errors.push('กรุณากรอกเวลาเริ่ม')
+    errors.push('กรุณากรอกเวลาเริ่ม')
   }
   if (!teacherData.timeout) {
-      errors.push('กรุณากรอกเวลาสิ้นสุด')
+    errors.push('กรุณากรอกเวลาสิ้นสุด')
   }
+  
   return errors
 }
-
 
 // path = GET /users สำหรับ get users ทั้งหมดที่บันทึกเข้าไปออกมา
 app.get('/teachers', async (req, res) => {
@@ -176,7 +176,7 @@ app.get('/teachers', async (req, res) => {
 app.post('/teachers', async (req, res) => {
   try {
     let Teacher = req.body;
-    const errors = validateData(Teacher)
+    const errors = validateDatatea(Teacher)
     if (errors.length > 0) {
       throw { message : 'กรุณากรอกข้อมูลให้ครบถ้วนน๊ะจะหลังบ้าน' ,
       errors : errors }
