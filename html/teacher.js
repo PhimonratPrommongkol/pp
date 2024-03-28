@@ -15,20 +15,28 @@ window.onload = async () =>{
     try {
         const response = await axios.get(`${BASE_URL}/teachers/${id}`)
 
-        const teachers = response.data
-        console.log(teachers)
-        
-        let firstname_teacherDOM = document.querySelector('select[name=firstname_teacher]')
-        let lastname_teacherDOM = document.querySelector('select[name=lastname_teacher]')
+        const students = response.data
+        console.log(students)
+        let firstnameDOM = document.querySelector('input[name=firstname]')
+        let lastnameDOM = document.querySelector('input[name=lastname]')
+        let ageDOM = document.querySelector('input[name=age]')
+        let addressDOM = document.querySelector('input[name=address]')
         let education_levelDOM = document.querySelector('select[name=education_level]')
-        let timein_DOM = document.querySelector('input[name=timein]')
-        let timeout_DOM = document.querySelector('input[name=timeout]')
         
-        firstname_teacherDOM.value = teachers.firstname_teacher
-        lastname_teacherDOM.value = teachers.lastname_teacher
-        education_levelDOM.value = teachers.education_level
-        timein_DOM.value = teachers.timein
-        timeout_DOM.value = teachers.timeout
+        let subject_selectDOM = document.querySelector('select[name=subject_select]')
+        let grade_selectDOM = document.querySelector('select[name=grade_select]')
+        let activity_subjectDOM = document.querySelector('select[name=activity_subject]')
+        
+        
+        firstnameDOM.value = students.firstname
+        lastnameDOM.value = students.lastname
+        ageDOM.value = students.age
+        addressDOM.value = students.address
+        education_levelDOM.value = students.education_level
+       
+        subject_selectDOM.value = students.subject_select
+        grade_selectDOM.value = students.grade_select
+        activity_subjectDOM.value = students.activity_subject
       } catch (error) {
         console.log('error', error)
         console.log('error message', error.message); // แสดงข้อความของข้อผิดพลาด
@@ -37,50 +45,68 @@ window.onload = async () =>{
     }
   }
 
-  const validateDatatea = (teacherData) => {
+  const validateData = (studentData) => {
     let errors = []
-    if (!teacherData.firstname_teacher) {
+    if (!studentData.firstname) {
         errors.push('กรุณากรอกชื่อ')
     }
-    if (!teacherData.lastname_teacher) {
+    if (!studentData.lastname) {
       errors.push('กรุณากรอกนามสกุล')
     }
-    if (!teacherData.education_level) {
+    if (!studentData.age) {
+      errors.push('กรุณากรอกอายุ')
+    }
+    if (!studentData.address) {
+      errors.push('กรุณากรอกที่อยู่')
+    }
+    if (!studentData.education_level) {
+      errors.push('กรุณากรอกระดับการศึกษา')
+    }
+    
+    if (!studentData.subject_select) {
       errors.push('กรุณากรอกวิชา')
     }
-    if (!teacherData.timein) {
-        errors.push('กรุณากรอกเวลาเริ่ม')
+    if (!studentData.grade_select) {
+      errors.push('กรุณากรอกเกรด')
     }
-    if (!teacherData.timeout) {
-        errors.push('กรุณากรอกเวลาสิ้นสุด')
+    if (!studentData.activity_subject) {
+      errors.push('กรุณากรอกกิจกรรมเสริมการเรียน')
     }
     return errors
   }
   
 const submitData = async () => {
-    let firstname_teacherDOM = document.querySelector('select[name=firstname_teacher]')
-    let lastname_teacherDOM = document.querySelector('select[name=lastname_teacher]')
-    let education_levelDOM = document.querySelector('select[name=education_level]')
-    let timein_DOM = document.querySelector('input[name=timein]')
-    let timeout_DOM = document.querySelector('input[name=timeout]')
-
+    
+    let firstnameDOM = document.querySelector('input[name=firstname]')
+    let lastnameDOM = document.querySelector('input[name=lastname]')
+    let ageDOM = document.querySelector('input[name=age]')
+    let addressDOM = document.querySelector('input[name=address]')
+    let education_levelDOM =document.querySelector('select[name=education_level]')
+    
+    let subject_selectDOM =document.querySelector('select[name=subject_select]')
+    let grade_selectDOM =document.querySelector('select[name=grade_select]')
+    let activity_subjectDOM =document.querySelector('select[name=activity_subject]')
 
 
     let messageDOM = document.getElementById('message')
     
     try {
-        let TeacherData = {
-          firstname_teacher: firstname_teacherDOM.value,
-          lastname_teacher: lastname_teacherDOM.value,
+        let StudentData = {
+          firstname: firstnameDOM.value,
+          lastname: lastnameDOM.value,
+          age: ageDOM.value,
+          address: addressDOM.value,
           education_level: education_levelDOM.value,
-          timein: timein_DOM.value,
-          timeout: timeout_DOM.value,
+        
+          subject_select: subject_selectDOM.value,
+          grade_select: grade_selectDOM.value,
+          activity_subject: activity_subjectDOM.value
 
         }
         
-        console.log('submit data', TeacherData)
+        console.log('submit data', StudentData)
   
-        const errors = validateData(TeacherData)
+        const errors = validateData(StudentData)
         
         if (errors.length > 0) {
             // มี error เกิดขึ้น
@@ -92,10 +118,10 @@ const submitData = async () => {
         let message = 'บันทึกข้อมูลเรียบร้อยเเล้ว'
 
         if(mode == 'CREATE'){
-            const response = await axios.post(`${BASE_URL}/teachers`,TeacherData)
+            const response = await axios.post(`${BASE_URL}/teachers`,StudentData)
             console.log('response',response.data)
         } else {//http://localhost:8000/users/17
-            const response = await axios.put(`${BASE_URL}/teachers/${selectedId}`, TeacherData)/// ผิดยังไง
+            const response = await axios.put(`${BASE_URL}/teachers/${selectedId}`, StudentData)/// ผิดยังไง
             message = 'แก้ไขข้อมูลเรียบร้อยแล้ว'
             console.log('response', response.data)
         }

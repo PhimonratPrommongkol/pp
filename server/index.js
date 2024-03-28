@@ -40,9 +40,7 @@ const validateData = (studentData) => {
   if (!studentData.education_level) {
     errors.push('กรุณากรอกระดับการศึกษา')
   }
-  if (!studentData.description) {
-    errors.push('กรุณากรอกคำอธิบาย')
-  }
+  
   if (!studentData.subject_select) {
     errors.push('กรุณากรอกวิชา')
   }

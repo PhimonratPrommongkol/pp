@@ -22,7 +22,7 @@ window.onload = async () =>{
         let ageDOM = document.querySelector('input[name=age]')
         let addressDOM = document.querySelector('input[name=address]')
         let education_levelDOM = document.querySelector('select[name=education_level]')
-        let descriptionDOM = document.querySelector('textarea[name=description]')
+        
         let subject_selectDOM = document.querySelector('select[name=subject_select]')
         let grade_selectDOM = document.querySelector('select[name=grade_select]')
         let activity_subjectDOM = document.querySelector('select[name=activity_subject]')
@@ -33,7 +33,7 @@ window.onload = async () =>{
         ageDOM.value = students.age
         addressDOM.value = students.address
         education_levelDOM.value = students.education_level
-        descriptionDOM.value = students.description
+       
         subject_selectDOM.value = students.subject_select
         grade_selectDOM.value = students.grade_select
         activity_subjectDOM.value = students.activity_subject
@@ -62,9 +62,7 @@ window.onload = async () =>{
     if (!studentData.education_level) {
       errors.push('กรุณากรอกระดับการศึกษา')
     }
-    if (!studentData.description) {
-      errors.push('กรุณากรอกคำอธิบาย')
-    }
+    
     if (!studentData.subject_select) {
       errors.push('กรุณากรอกวิชา')
     }
@@ -84,7 +82,7 @@ const submitData = async () => {
     let ageDOM = document.querySelector('input[name=age]')
     let addressDOM = document.querySelector('input[name=address]')
     let education_levelDOM =document.querySelector('select[name=education_level]')
-    let descriptionDOM = document.querySelector('textarea[name=description]')
+    
     let subject_selectDOM =document.querySelector('select[name=subject_select]')
     let grade_selectDOM =document.querySelector('select[name=grade_select]')
     let activity_subjectDOM =document.querySelector('select[name=activity_subject]')
@@ -99,7 +97,7 @@ const submitData = async () => {
           age: ageDOM.value,
           address: addressDOM.value,
           education_level: education_levelDOM.value,
-          description: descriptionDOM.value,
+        
           subject_select: subject_selectDOM.value,
           grade_select: grade_selectDOM.value,
           activity_subject: activity_subjectDOM.value
