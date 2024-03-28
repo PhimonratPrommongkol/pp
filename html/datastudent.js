@@ -23,6 +23,10 @@ window.onload = async () =>{
         let addressDOM = document.querySelector('input[name=address]')
         let education_levelDOM = document.querySelector('select[name=education_level]')
         let descriptionDOM = document.querySelector('textarea[name=description]')
+        let subject_selectDOM = document.querySelector('select[name=subject_select]')
+        let grade_selectDOM = document.querySelector('select[name=grade_select]')
+        let activity_subjectDOM = document.querySelector('select[name=activity_subject]')
+        
         
         firstnameDOM.value = students.firstname
         lastnameDOM.value = students.lastname
@@ -30,7 +34,9 @@ window.onload = async () =>{
         addressDOM.value = students.address
         education_levelDOM.value = students.education_level
         descriptionDOM.value = students.description
-        
+        subject_selectDOM.value = students.subject_select
+        grade_selectDOM.value = students.grade_select
+        activity_subjectDOM.value = students.activity_subject
       } catch (error) {
         console.log('error', error)
         console.log('error message', error.message); // แสดงข้อความของข้อผิดพลาด
@@ -59,6 +65,15 @@ window.onload = async () =>{
     if (!studentData.description) {
       errors.push('กรุณากรอกคำอธิบาย')
     }
+    if (!studentData.subject_select) {
+      errors.push('กรุณากรอกวิชา')
+    }
+    if (!studentData.grade_select) {
+      errors.push('กรุณากรอกเกรด')
+    }
+    if (!studentData.activity_subject) {
+      errors.push('กรุณากรอกกิจกรรมเสริมการเรียน')
+    }
     return errors
   }
   
@@ -70,21 +85,30 @@ const submitData = async () => {
     let addressDOM = document.querySelector('input[name=address]')
     let education_levelDOM =document.querySelector('select[name=education_level]')
     let descriptionDOM = document.querySelector('textarea[name=description]')
-    let messageDOM = document.getElementById('message')
+    let subject_selectDOM =document.querySelector('select[name=subject_select]')
+    let grade_selectDOM =document.querySelector('select[name=grade_select]')
+    let activity_subjectDOM =document.querySelector('select[name=activity_subject]')
 
+
+    let messageDOM = document.getElementById('message')
+    
     try {
-        let studentData = {
+        let StudentData = {
           firstname: firstnameDOM.value,
           lastname: lastnameDOM.value,
           age: ageDOM.value,
           address: addressDOM.value,
           education_level: education_levelDOM.value,
-          description: descriptionDOM.value
+          description: descriptionDOM.value,
+          subject_select: subject_selectDOM.value,
+          grade_select: grade_selectDOM.value,
+          activity_subject: activity_subjectDOM.value
+
         }
         
-        console.log('submit data', studentData)
+        console.log('submit data', StudentData)
   
-        const errors = validateData(studentData)
+        const errors = validateData(StudentData)
         
         if (errors.length > 0) {
             // มี error เกิดขึ้น
@@ -96,10 +120,10 @@ const submitData = async () => {
         let message = 'บันทึกข้อมูลเรียบร้อยเเล้ว'
 
         if(mode == 'CREATE'){
-            const response = await axios.post(`${BASE_URL}/students`,studentData)
+            const response = await axios.post(`${BASE_URL}/students`,StudentData)
             console.log('response',response.data)
         } else {//http://localhost:8000/users/17
-            const response = await axios.put(`${BASE_URL}/students/${selectedId}`, studentData)/// ผิดยังไง
+            const response = await axios.put(`${BASE_URL}/students/${selectedId}`, StudentData)/// ผิดยังไง
             message = 'แก้ไขข้อมูลเรียบร้อยแล้ว'
             console.log('response', response.data)
         }
@@ -129,5 +153,7 @@ const submitData = async () => {
         messageDOM.className = 'message danger'
     }
 }
+
+
 
 

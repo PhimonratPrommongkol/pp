@@ -7,6 +7,8 @@
   <title>Document 2</title>
   <link rel="stylesheet" href="style.css">
 </head>
+<a href="teacherlist.html">ข้อมูลครูทุกคน</a>
+<a href="datastudent.html">กรอกข้อมูลนักเรียน</a>
 <body>
   <!-- ส่วนที่แสดงออกไปในหน้าจอของ Browser -->
 
@@ -17,22 +19,25 @@
     </div>
     <div class="flex form-input">
       <div class="header-form">ชื่อ</div>
-      <input class="form" name="firstname" type="text">
-    </div>
+        <input class="form" name="firstname_teacher" type="text">
+      </div>
+      <div class="header-form">นามสกุล</div>
+        <input class="form" name="lastname_teacher" type="text">
+      </div>
     <div class="flex form-input">วิชาที่สอน
         
-        <select name="education-level" class="form">
-        <option naทe="education" value="n1">ไทย</option>
-        <option naทe="education" value="n2">สังคม</option>
-        <option naทe="education" value="n3">คณิต</option>
-        <option naทe="education" value="p1">ประวิติศาสตร์</option>
-        <option naทe="education" value="p2">ภูมิศาสตร์</option>
-        <option naทe="education" value="p3">อังกฤษ</option>
-        <option naทe="education" value="p4">พละ</option>
-        <option naทe="education" value="p5">ฟิสิกศ์</option>
-        <option naทe="education" value="p6">เคมี</option>
-        <option naทe="education" value="m1">ชีวะ</option>
-        <option naทe="education" value="m2">จีน</option>
+        <select name="education_level" class="form">
+        <option name="education" value="c1">ไทย</option>
+        <option name="education" value="c1">สังคม</option>
+        <option name="education" value="c3">คณิต</option>
+        <option name="education" value="c4">ประวิติศาสตร์</option>
+        <option name="education" value="c5">ภูมิศาสตร์</option>
+        <option name="education" value="c6">อังกฤษ</option>
+        <option name="education" value="c7">พละ</option>
+        <option name="education" value="c8">ฟิสิกศ์</option>
+        <option name="education" value="c9">เคมี</option>
+        <option name="education" value="c10">ชีวะ</option>
+        <option name="education" value="11">จีน</option>
         </select>
         
     <!-- เพิ่มตัวเลือกเพิ่มเติมตามต้องการ -->
@@ -50,6 +55,6 @@
     </div>
   </div>
 <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
-<script src="index.js"></script>
+<script src="teacher.js"></script>
 </body>
 </html>

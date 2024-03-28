@@ -9,7 +9,8 @@
 </head>
 <body>
   <!-- ส่วนที่แสดงออกไปในหน้าจอของ Browser -->
-
+  <a href="liststudent.html">ข้อมูลนักเรียนทุกคน</a>
+  <a href="teacher.html">กรอกข้อมูลครู</a>
   <div class="container">
     <!-- 3. form -->
     <link rel="stylesheet" href="liststudent.html">
@@ -50,6 +51,44 @@
         <textarea name="description"></textarea>
       </div>
     </div>
+
+    <div class="flex form-input">วิชา
+        
+      <select name="subject_select" class="form">
+        <option name="subject" value="ไทย">ไทย</option>
+        <option name="subject" value="สังคม">สังคม</option>
+        <option name="subject" value="คณิต">คณิต</option>
+        <option name="subject" value="ประวิติศาสตร์">ประวิติศาสตร์</option>
+        <option name="subject" value="อังกฤษ">อังกฤษ</option>
+        <option name="subject" value="ฟิสิกศ์">ฟิสิกส์</option>
+        <option name="subject" value="เคมี">เคมี</option>
+        <option name="subject" value="ชีวะ">ชีวะ</option>
+        <option name="subject" value="จีน">จีน</option>
+      </select>
+  </div>
+
+    <div class="flex form-input">ผลการเรียน
+        
+      <select name="grade_select" class="form">
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+        <option value="F">F</option>
+        <option value="W">W</option>
+      </select>
+    </div>
+
+    <div class="flex form-input">กิจกรรมเสริมการเรียน
+        
+      <select name="activity_subject" class="form">
+      <option value="ลูกเสือ">ลูกเสือ</option>
+      <option value="พละ">พละ</option>
+      <option value="บำเพ็ญประโยน์">บำเพ็ญประโยน์</option>
+      
+      </select>
+    </div>
+
     <div id = "message" class ="message">
       hi hi
     </div>
