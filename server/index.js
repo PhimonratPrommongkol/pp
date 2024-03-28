@@ -45,6 +45,7 @@ const validateData = (studentData) => {
   }
   return errors
 }
+
 // path = GET /users สำหรับ get users ทั้งหมดที่บันทึกเข้าไปออกมา
 app.get('/students', async (req, res) => {
   const results = await conn.query('SELECT * FROM students')
@@ -79,7 +80,7 @@ app.post('/students', async (req, res) => {
 
 
 // path = GET /users/:id สำหรับการดึง users รายคนออกมา
-app.get('/students/:id', async (req, res) => {
+app.get('/Students/:id', async (req, res) => {
   try {
     let Estate = req.params.id
     const results = await conn.query('SELECT * FROM students WHERE id = ?', Estate)
@@ -103,7 +104,7 @@ app.put('/students/:id', async (req, res) => {
     let Estate = req.params.id;
     let updateEstates = req.body;
   const results = await conn.query(
-    'UPDATE Estates SET ? WHERE id = ?', 
+    'UPDATE students SET ? WHERE id = ?', 
     [updateEstates, Estate]
     )
   console.log('results', results)

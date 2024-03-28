@@ -13,7 +13,7 @@ window.onload = async () =>{
 
     //1ดึงข้อมูล user เก่าก่อน
     try {
-        const response = await axios.get(`${BASE_URL}/student/${id}`)
+        const response = await axios.get(`${BASE_URL}/students/${id}`)
 
         const students = response.data
         console.log(students)
@@ -99,7 +99,7 @@ const submitData = async () => {
             const response = await axios.post(`${BASE_URL}/students`,studentData)
             console.log('response',response.data)
         } else {//http://localhost:8000/users/17
-            const response = await axios.put(`${BASE_URL}/students/${selectedId}`, studentData)
+            const response = await axios.put(`${BASE_URL}/students/${selectedId}`, studentData)/// ผิดยังไง
             message = 'แก้ไขข้อมูลเรียบร้อยแล้ว'
             console.log('response', response.data)
         }
@@ -109,7 +109,7 @@ const submitData = async () => {
         
     } catch (error) {
         console.log('error message', error.message)
-        console.log('error', error.errors)////
+        console.log('error', error.errors)
 
         if (error.response) {
             console.log(error.response)
