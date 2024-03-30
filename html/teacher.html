@@ -7,8 +7,10 @@
   <title>Document 2</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<a href="teacherlist.html">ข้อมูลครูทุกคน</a>
-<a href="datastudent.html">กรอกข้อมูลนักเรียน</a>
+<a class="a2" href="teacherlist.html">ข้อมูลครูทุกคน</a>
+<a class="a1" href="datastudent.html">กรอกข้อมูลนักเรียน</a>
+
+
 <body>
   <!-- ส่วนที่แสดงออกไปในหน้าจอของ Browser -->
 
@@ -23,7 +25,7 @@
       </div>
       <div class="header-form">นามสกุล</div>
         <input class="form" name="lastname_teacher" type="text">
-      </div>
+      
       <div class="flex form-input">วิชา
         
         <select name="subject_select" class="form">
@@ -43,13 +45,13 @@
       <input class="form" name="timein" type="time" min="0" max="100"> 
       <input class="form" name="timeout" type="time" min="0" max="100">
     </div>
-   
-    <div id = "message" class ="message">
-      hi hi
-    </div>
+    
+   </div>
+    
     <div class="center">
       <button onclick="submitData()" class="button">ส่งข้อมูล</button>
     </div>
+    <div id = "message" class ="message"></div>
   </div>
 <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
 <script src="teacher.js"></script>

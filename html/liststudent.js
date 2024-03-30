@@ -18,14 +18,16 @@ const loadData = async () => {
 
    
    let htmlData ='<div>'
-    for(let i=0; i<response.data.length; i++){
-        let datastudent = response.data[i];
-        htmlData += `<div>
+   htmlData += `<div  class="h"> รายชื่อนักเรียน </div>`
+for(let i=0; i<response.data.length; i++){
+    let datastudent = response.data[i];
+    htmlData += `<div>
+    
         ${datastudent.id} ${datastudent.firstname} ${datastudent.lastname} 
         <a href='datastudent.html?id=${datastudent.id}'><button class="edit">Edit</button></a> 
         <button class ='delete' data-id='${datastudent.id}'>Delete</button>
         </div>`;
-    }
+}
    htmlData += '</div>';
    usersDOM.innerHTML = htmlData;
    const deleteDOMs = document.getElementsByClassName('delete');

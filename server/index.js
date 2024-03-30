@@ -62,14 +62,14 @@ app.get('/students', async (req, res) => {
 // path = POST /users สำหรับการสร้าง users ใหม่บันทึกเข้าไป
 app.post('/students', async (req, res) => {
   try {
-    let Estate = req.body;
-    const errors = validateData(Estate)
+    let stu = req.body;
+    const errors = validateData(stu)
     if (errors.length > 0) {
       throw { message : 'กรุณากรอกข้อมูลให้ครบถ้วนน๊ะจะหลังบ้าน' ,
       errors : errors }
     }
 
-  const results = await conn.query('INSERT INTO students SET ?', Estate)
+  const results = await conn.query('INSERT INTO students SET ?', stu)
   res.json({
     message: 'Create user successfully',
     data: results[0]
@@ -89,8 +89,8 @@ app.post('/students', async (req, res) => {
 // path = GET /users/:id สำหรับการดึง users รายคนออกมา
 app.get('/Students/:id', async (req, res) => {
   try {
-    let Estate = req.params.id
-    const results = await conn.query('SELECT * FROM students WHERE id = ?', Estate)
+    let stu = req.params.id
+    const results = await conn.query('SELECT * FROM students WHERE id = ?', stu)
     if (results[0].length == 0) {
       throw { statusCode: 404, message: 'หาไม่เจอ' }
     }
@@ -108,11 +108,11 @@ app.get('/Students/:id', async (req, res) => {
 //path = PUT /users/:id สำหรับการแก้ไข users รายคน (ตาม id ที่บันทึกเข้าไป)
 app.put('/students/:id', async (req, res) => {
   try {
-    let Estate = req.params.id;
-    let updateEstates = req.body;
+    let stu = req.params.id;
+    let updatestu = req.body;
   const results = await conn.query(
     'UPDATE students SET ? WHERE id = ?', 
-    [updateEstates, Estate]
+    [updatestu, stu]
     )
   console.log('results', results)
   res.json({

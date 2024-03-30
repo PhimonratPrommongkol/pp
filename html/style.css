@@ -1,0 +1,160 @@
+
+/* ข้อมูลนักเรียน */
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  .header.form-input{
+    text-align: center;
+  } 
+
+
+/* ลิงก์*/
+
+  
+  .a1 { /*นักเรียน*/
+    display: block;
+    margin: 10px 0;
+    color: pink;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .a1:hover {
+    text-decoration: underline;
+  }
+
+  .a2 { /*ครู*/
+    display: block;
+    margin: 10px 0;
+    color: lightblue;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .a2:hover {
+    text-decoration: underline;
+
+  }
+  .h{
+    font-size: 20px;
+    display: block;
+    margin: 5px;
+    color: #0018b3;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  
+  a:hover {
+    text-decoration: underline;
+  }
+
+  
+/* คลุมรอบของฟอร์ม */
+  .container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    max-width: 640px;
+    background-color:rgb(239, 239, 239);
+ 
+  }
+  
+/* ส่วนหัวของฟอร์ม */
+  .header {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    
+  }
+  
+/* ชื่อหัวของแต่ละช่อง */
+  .header-form{
+    padding: 2px;
+  }
+/* ช่องกรอกฟอร์ม */
+  .form {
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid #454545;
+  }
+
+/*วิชา*/
+  .flex.form-input{
+    padding-block: 5px;
+    border-radius: 4px;
+  }
+  
+/* ปุ่มส่งข้อมูล */
+  .center {
+    text-align: center;
+  }
+/*ปุ่มส่งข้อมูล*/
+  .button {
+    padding: 10px 20px;
+    background-color: #2453ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #247cff;
+  }
+  
+/* จัดการข้อความผลลัพธ์ */
+  .message {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+
+/*แจ้งเตือนส่งข้อมูลไม่ได้*/
+  .message.danger{
+    background-color: red;
+    border-radius: 10px;
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    
+  }
+  
+  /*แจ้งเตือนส่งข้อมูลได้*/
+  .message.success {
+    background-color: lightgreen;
+    border-radius: 10px;
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+  }
+
+  /*แก้ไขและลบ*/
+  .edit{
+    border: 0;
+    width: fit-content;
+    height: fit-content;
+    background-color: rgb(255, 180, 19);
+    color: white;
+    border-radius: 8px;
+    border: 3px solid rgb(255, 128, 0);
+  
+  
+  }
+  .delete{
+    border: 0;
+    width: fit-content;
+    height: fit-content;
+    background-color: rgb(255, 94, 0);
+    color: white;
+    border-radius: 8px;
+    border: 3px solid rgb(222, 0, 0);
+  }
+  /* สิ้นสุดการตกแต่ง CSS */
+  

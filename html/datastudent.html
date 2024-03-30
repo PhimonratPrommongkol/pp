@@ -9,8 +9,8 @@
 </head>
 <body>
   <!-- ส่วนที่แสดงออกไปในหน้าจอของ Browser -->
-  <a href="liststudent.html">ข้อมูลนักเรียนทุกคน</a>
-  <a href="teacher.html">กรอกข้อมูลครู</a>
+  <a class="a1" href="liststudent.html">ข้อมูลนักเรียนทุกคน</a>
+  <a class="a2" href="teacher.html">กรอกข้อมูลครู</a>
   <div class="container">
     <!-- 3. form -->
     <link rel="stylesheet" href="liststudent.html">
@@ -34,12 +34,12 @@
         <input class="form" name="address" type="text">
       </div>
     
-    </div>
+    
     <div class="header-form">ระดับการศึกษา
         
         <select name="education_level" class="form">
-            <option name="education" value="ปฐมศึกษา">ปฐมศึกษา</option>
-            <option name="education" value="มัธยม">มัธยม</option>
+            <option name="education" value="ปฐมศึกษา">ประถมศึกษา</option>
+            <option name="education" value="มัธยม">มัธยมศึกษา</option>
             <option name="education" value="มหาวิทยาลัย">มหาวิทยาลัย</option>
         </select>
         
@@ -83,14 +83,18 @@
       
       </select>
     </div>
-
-    <div id = "message" class ="message">
-      hi hi
-    </div>
-    <div class="center">
-      <button onclick="submitData()" class="button">ส่งข้อมูล</button>
-    </div>
+    
   </div>
+  </div>
+  <div class="center">
+    <button onclick="submitData()" class="button">ส่งข้อมูล</button>
+  </div>
+    <div id = "message" class ="message">
+     
+    </div>
+    
+
+
 <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
 <script src="datastudent.js"></script>
 </body>

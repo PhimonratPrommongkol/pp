@@ -18,6 +18,7 @@ const loadData = async () => {
 
    
    let htmlData ='<div>'
+   htmlData += `<div  class="h1"> รายชื่อคุณครู </div>`
     for(let i=0; i<response.data.length; i++){
         let datateacher = response.data[i];
         htmlData += `<div>
